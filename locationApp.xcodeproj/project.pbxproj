@@ -12,6 +12,8 @@
 		A98AFD9D1C995C5C005A1722 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A98AFD9B1C995C5C005A1722 /* Main.storyboard */; };
 		A98AFD9F1C995C5C005A1722 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A98AFD9E1C995C5C005A1722 /* Assets.xcassets */; };
 		A98AFDA21C995C5C005A1722 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A98AFDA01C995C5C005A1722 /* LaunchScreen.storyboard */; };
+		A98AFDAC1C9968EA005A1722 /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98AFDAB1C9968EA005A1722 /* Results.swift */; };
+		A98AFDB01C996E55005A1722 /* ResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98AFDAF1C996E55005A1722 /* ResultsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		A98AFD9E1C995C5C005A1722 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A98AFDA11C995C5C005A1722 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A98AFDA31C995C5C005A1722 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A98AFDAB1C9968EA005A1722 /* Results.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
+		A98AFDAF1C996E55005A1722 /* ResultsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			children = (
 				A98AFD971C995C5C005A1722 /* AppDelegate.swift */,
 				A98AFD991C995C5C005A1722 /* ViewController.swift */,
+				A98AFDAB1C9968EA005A1722 /* Results.swift */,
+				A98AFDAF1C996E55005A1722 /* ResultsCell.swift */,
 				A98AFD9B1C995C5C005A1722 /* Main.storyboard */,
 				A98AFD9E1C995C5C005A1722 /* Assets.xcassets */,
 				A98AFDA01C995C5C005A1722 /* LaunchScreen.storyboard */,
@@ -136,7 +142,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A98AFDAC1C9968EA005A1722 /* Results.swift in Sources */,
 				A98AFD9A1C995C5C005A1722 /* ViewController.swift in Sources */,
+				A98AFDB01C996E55005A1722 /* ResultsCell.swift in Sources */,
 				A98AFD981C995C5C005A1722 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,10 +258,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = locationApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mukund-ravindra.locationApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -261,6 +271,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = locationApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mukund-ravindra.locationApp";
@@ -287,6 +298,7 @@
 				A98AFDA81C995C5C005A1722 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
