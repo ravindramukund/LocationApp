@@ -58,16 +58,32 @@
 		A98AFD961C995C5C005A1722 /* locationApp */ = {
 			isa = PBXGroup;
 			children = (
+				A9A68D611C9FED3100848276 /* Model */,
+				A9A68D601C9FED2300848276 /* Controller */,
 				A98AFD971C995C5C005A1722 /* AppDelegate.swift */,
-				A98AFD991C995C5C005A1722 /* ViewController.swift */,
-				A98AFDAB1C9968EA005A1722 /* Results.swift */,
-				A98AFDAF1C996E55005A1722 /* ResultsCell.swift */,
 				A98AFD9B1C995C5C005A1722 /* Main.storyboard */,
 				A98AFD9E1C995C5C005A1722 /* Assets.xcassets */,
 				A98AFDA01C995C5C005A1722 /* LaunchScreen.storyboard */,
 				A98AFDA31C995C5C005A1722 /* Info.plist */,
 			);
 			path = locationApp;
+			sourceTree = "<group>";
+		};
+		A9A68D601C9FED2300848276 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A98AFD991C995C5C005A1722 /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		A9A68D611C9FED3100848276 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A98AFDAB1C9968EA005A1722 /* Results.swift */,
+				A98AFDAF1C996E55005A1722 /* ResultsCell.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

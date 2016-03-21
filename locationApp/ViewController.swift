@@ -20,7 +20,6 @@ import Foundation
 
 class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSource  {
     
-   
     //variables
     
     var latitude: Double!
@@ -30,6 +29,7 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
     var r : Int!
     var Result = [Results]()
     var data: NSData?
+    
     //response
     
     var icon:String!
@@ -82,18 +82,12 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
         return Result.count
     }
     
-    func locationAuthStatus() {
-        if CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse {
-            
-        }
-    }
     //when search button pressed
+    
     @IBAction func SearchBtnPressed(sender: UIButton) {
         
         let r = String(UTF8String:RadiusTextField.text!)!
         print (r)
-        
-        //let someVariable = Double(someTextField.text)
         
         let lon12:Double = Double(longTextField.text!)!
         let lat12:Double = Double(latTextField.text!)!
@@ -113,7 +107,7 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
         let session =  NSURLSession.sharedSession()
         let url = NSURL(string: urlString)!
         
-        session.dataTaskWithURL(url) { (var data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
+        session.dataTaskWithURL(url) { (let data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
             
             if let responseData = data {
                 
@@ -144,18 +138,19 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
                             let types = resultsdictVal["types"] as! NSArray;
                             let icon = resultsdictVal["icon"] as! String;
                             
-                           
-                            
                             // Getting image from url and showing it iconView
+                            // this is to convert the string to a url and storing the image in a temp variable and then showing the output on simulator from the image outlet. These 6 lines of code.
                             
                             
                             let iconString = resultsdictVal["icon"]!
                             let iconUrl = NSURL(string: "\(iconString)")!
                             print("url = \(iconUrl)")
-            
-                            let data = NSData(contentsOfURL: iconUrl)
-                            iconView.image = UIImage(data: data!)
-                            
+//                            
+//                            let url = NSURL(string: "\(Result.iconUrl)")
+//                            let data = NSData(contentsOfURL: url!)
+//                            
+//                            iconView.image = UIImage(data: data!)
+//
 
                             
                             print("the lats and longs of place \(name) are \(lat) and \(lng)")
@@ -163,7 +158,6 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
                             
                             
                             //Haversine's formula to calculate radius of earth
-                            
                             
                             let lat1 = lat12
                             let lat2 = lat
@@ -178,12 +172,12 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
                             let c = 2 * atan2( sqrt(a), sqrt(1-a) )
                             let d = R * c
                             let distance = d * 1000
-                            
                             let d1 = Int(distance)
-                            
                             print ("distance between 2 places is \(d1) meters \n\n")
-                            
                             let dist = String(d1)
+                            
+                            // if the result does not contain political in type of place, only then shows results
+                            
 
                             if(!types.containsObject("political"))
                             
