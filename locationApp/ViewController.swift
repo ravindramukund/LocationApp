@@ -86,6 +86,13 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
     
     @IBAction func SearchBtnPressed(sender: UIButton) {
         
+        
+        latTextField.resignFirstResponder()
+        longTextField.resignFirstResponder()
+        RadiusTextField.resignFirstResponder()
+        
+        
+        
         let r = String(UTF8String:RadiusTextField.text!)!
         print (r)
         
