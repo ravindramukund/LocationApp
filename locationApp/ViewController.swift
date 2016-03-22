@@ -92,7 +92,6 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
         RadiusTextField.resignFirstResponder()
         
         
-        
         let r = String(UTF8String:RadiusTextField.text!)!
         print (r)
         
@@ -125,6 +124,8 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
                     //Update your UI
                     
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        
+                        self.Result = []
                         
                         let responseString = NSString(data:responseData , encoding: NSUTF8StringEncoding);
                         
