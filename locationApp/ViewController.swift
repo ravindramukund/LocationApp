@@ -87,10 +87,21 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
     @IBAction func SearchBtnPressed(sender: UIButton) {
         
         
+        
+        
+        if latTextField.text! != "" && longTextField.text! != "" && RadiusTextField.text! != ""
+
+        {
+            
+        
+            
+            
         latTextField.resignFirstResponder()
         longTextField.resignFirstResponder()
         RadiusTextField.resignFirstResponder()
         
+            
+            
         
         let r = String(UTF8String:RadiusTextField.text!)!
         print (r)
@@ -197,11 +208,18 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
                         print("response is \(responseString)")
                         self.tableView.reloadData();
                         
+                        self.searchBtn.enabled = true
+                        
+                        
                     })
                 } catch {
-                    print ("could not serialize")
-                }
+                    print("could nt serialize")
             }
-        }  .resume()
+            }
+            } .resume()
+            }else {
+                self.searchBtn.enabled = false
+        }
     }
 }
+
