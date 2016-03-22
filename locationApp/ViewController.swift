@@ -47,7 +47,7 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
     @IBOutlet weak var searchBtn: UIButton!
     @IBOutlet weak var RadiusTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var warningLbl: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,23 +86,24 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
     
     @IBAction func SearchBtnPressed(sender: UIButton) {
         
-        
-        
-        
-        if latTextField.text! != "" && longTextField.text! != "" && RadiusTextField.text! != ""
-
-        {
+        if let latText = latTextField.text where latText != "", let longText = longTextField.text where longText != "", let radText = RadiusTextField.text where radText != "" {
             
+            self.warningLbl.text = "Text fields must be populated"
+            
+            self.warningLbl.hidden = true
+           
+        
+        
         
             
+        // To close or hide the keyboard after entering the values
             
         latTextField.resignFirstResponder()
         longTextField.resignFirstResponder()
         RadiusTextField.resignFirstResponder()
-        
+    
+        self.warningLbl.hidden = true
             
-            
-        
         let r = String(UTF8String:RadiusTextField.text!)!
         print (r)
         
@@ -115,7 +116,6 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
         let latLong = latitude + "," + longitude
         var placeList = [String]() //Array
         placeList.append("\(latLong)")
-        
         
         // to send request and get response
         
@@ -174,8 +174,6 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
                             
                             print("the lats and longs of place \(name) are \(lat) and \(lng)")
                             
-                            
-                            
                             //Haversine's formula to calculate radius of earth
                             
                             let lat1 = lat12
@@ -197,7 +195,6 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
                             
                             // if the result does not contain political in type of place, only then shows results
                             
-
                             if(!types.containsObject("political"))
                             
                             {
@@ -208,17 +205,18 @@ class ViewController: UIViewController, UITableViewDelegate , UITableViewDataSou
                         print("response is \(responseString)")
                         self.tableView.reloadData();
                         
-                        self.searchBtn.enabled = true
-                        
-                        
                     })
                 } catch {
                     print("could nt serialize")
             }
             }
             } .resume()
-            }else {
-                self.searchBtn.enabled = false
+            
+        } else {
+            
+                self.warningLbl.text = "Text fields must be populated"
+                self.warningLbl.hidden = false
+                return
         }
     }
 }

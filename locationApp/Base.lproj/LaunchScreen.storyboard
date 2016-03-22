@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -27,30 +28,47 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project done by Ravindra Mukund" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Srp-Ff-7dz">
-                                <rect key="frame" x="183" y="548" width="235" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project by Ravindra Mukund" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhd-6G-byL">
+                                <rect key="frame" x="184" y="559" width="233" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="235" id="Roq-KL-uMm"/>
-                                    <constraint firstAttribute="height" constant="21" id="zGS-xb-csy"/>
+                                    <constraint firstAttribute="height" constant="21" id="6AN-fw-8XC"/>
+                                    <constraint firstAttribute="width" constant="226" id="BnW-w1-eYP"/>
+                                    <constraint firstAttribute="height" constant="21" id="ij9-vg-vSj"/>
+                                    <constraint firstAttribute="width" constant="233" id="zaJ-Oe-wl2"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="6AN-fw-8XC"/>
+                                        <exclude reference="BnW-w1-eYP"/>
+                                    </mask>
+                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Srp-Ff-7dz" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="0JL-VG-b1L"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Srp-Ff-7dz" secondAttribute="bottom" constant="31" id="DF0-zw-J7C"/>
+                            <constraint firstItem="dhd-6G-byL" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="DoL-yv-uNu"/>
+                            <constraint firstItem="dhd-6G-byL" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Dz5-we-JZs"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="GRb-gf-b5Y" secondAttribute="bottom" constant="280" id="FGq-aa-lUo"/>
                             <constraint firstItem="GRb-gf-b5Y" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="260" id="Fqw-JE-dlg"/>
+                            <constraint firstItem="dhd-6G-byL" firstAttribute="top" secondItem="GRb-gf-b5Y" secondAttribute="bottom" constant="239" id="YfT-1y-k9g"/>
                             <constraint firstItem="GRb-gf-b5Y" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="bPm-Cp-wtP"/>
-                            <constraint firstItem="Srp-Ff-7dz" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="qNV-2e-fpy"/>
+                            <constraint firstItem="dhd-6G-byL" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="g0F-jL-ff8"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="dhd-6G-byL" secondAttribute="bottom" constant="20" id="mGE-nC-aWg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dhd-6G-byL" secondAttribute="trailing" constant="167" id="mtk-gY-7qF"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="dhd-6G-byL" secondAttribute="bottom" constant="20" id="rxh-Hd-eeA"/>
                             <constraint firstItem="GRb-gf-b5Y" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="uPD-a3-jjk"/>
+                            <constraint firstItem="dhd-6G-byL" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="167" id="x1v-gJ-gw0"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="qNV-2e-fpy"/>
+                                <exclude reference="DoL-yv-uNu"/>
+                                <exclude reference="g0F-jL-ff8"/>
+                                <exclude reference="mtk-gY-7qF"/>
+                                <exclude reference="x1v-gJ-gw0"/>
+                                <exclude reference="mGE-nC-aWg"/>
                             </mask>
                         </variation>
                     </view>
